@@ -23,7 +23,6 @@ class MYSQLUndo{
     * @param array $driver_options PDO driver options
     */
     public function __construct($db_host, $db_name, $db_username, $db_password, $driver_options = array()){
-        $this->_is_mysql_version_older_than_5_0_10 = false;
         $this->setConnectionDetails($db_host, $db_name, $db_username, $db_password, $driver_options);
     }
 
