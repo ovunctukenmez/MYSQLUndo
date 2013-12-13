@@ -97,7 +97,7 @@ class MYSQLUndo{
     }
 
     /**
-    * enables logging on the specified database table
+    * disables logging on the specified database table
     * it performs the following operations:
     * - it deletes log table.
     * - it deletes update, delete and insert triggers
