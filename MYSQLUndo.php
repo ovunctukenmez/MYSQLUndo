@@ -458,16 +458,16 @@ CREATE PROCEDURE $stored_procedure_name(IN start_date DATETIME, IN end_date DATE
             IF @is_inserted = 1 THEN
                 DELETE FROM $db_table WHERE $primary_column_name = @record_id;
             ELSE
-                SET @row_exists = 0;
+                SET @row_count = 0;
 
                 SELECT
-                1
-                INTO @row_exists
+                COUNT(1)
+                INTO @row_count
                 FROM $db_table
                 WHERE
                 $primary_column_name = @record_id;
 
-                IF @row_exists = 1 THEN
+                IF @row_count = 1 THEN
                     UPDATE $db_table t1, $temporary_log_table t2
                     SET
                     $str_update_columns
